@@ -30,3 +30,116 @@ My rate limiter has 3 parameters:
 - num_tokens: starts at 10, and is always 2 * refill_number, capped at **20**
 
 The idea is to let it adjust to current demand smoothly, so that it’s responsive but doesn’t spike or swing too much.
+
+## Log
+
+    Request 1: Allowed
+    Request 2: Allowed
+    Request 3: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    requests during last 1 second: 5)
+    Request 6: Allowed
+    Request 7: Allowed
+    Request 8: Allowed
+    Request 9: Allowed
+    Request 10: Allowed
+    requests during last 1 second: 5)
+    Request 1: Allowed
+    Request 2: Allowed
+    Request 3: Allowed
+    requests during last 1 second: 3)
+    Adjusted max_tokens to 8, refill_number to 4
+    Request 4: Allowed
+    Request 5: Allowed
+    requests during last 1 second: 2)
+    Adjusted max_tokens to 6, refill_number to 3
+    Request 6: Allowed
+    Request 7: Allowed
+    Request 8: Allowed
+    requests during last 1 second: 3)
+    Request 9: Allowed
+    Request 10: Allowed
+    requests during last 1 second: 2)
+    Request 1: Allowed
+    Request 2: Allowed
+    Request 3: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 7: Rejected
+    Request 8: Rejected
+    Request 9: Rejected
+    requests during last 1 second: 9)
+    Adjusted max_tokens to 12, refill_number to 6
+    Request 10: Allowed
+    Request 1: Allowed
+    Request 2: Allowed
+    Request 3: Allowed
+    requests during last 1 second: 4)
+    Adjusted max_tokens to 10, refill_number to 5
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 7: Allowed
+    requests during last 1 second: 4)
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 7: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 7: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 7: Allowed
+    requests during last 1 second: 4)
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 7: Allowed
+    Request 4: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 5: Allowed
+    Request 6: Allowed
+    Request 6: Allowed
+    Request 7: Allowed
+    Request 7: Allowed
+    requests during last 1 second: 4)
+    requests during last 1 second: 4)
+    Request 8: Allowed
+    Request 9: Allowed
+    Request 9: Allowed
+    Request 10: Allowed
+    Request 10: Allowed
+    requests during last 1 second: 3)
+    Adjusted max_tokens to 8, refill_number to 4
